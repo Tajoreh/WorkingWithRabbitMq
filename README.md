@@ -79,17 +79,16 @@ To undrestand how the message broker gets a message from producer to consumer, w
 An exchange can be tied to many queues and also a queue can be tied to many exchanges. 
 
 In this example we can see that some queues are tied up to a single exchange but other queues are tied to multiple exchanges.
-![image](https://github.com/Tajoreh/WorkingWithRabbitMq/assets/20103416/343e105e-152c-4780-8e6d-50df9f4502ba)
-
+![image](https://github.com/Tajoreh/WorkingWithRabbitMq/assets/20103416/ebd4bc61-e619-4648-88c8-d4b228973ae7)
 
 We might even have the case where queue is tied to no exchanges. In this case the queue will not receive any messages from a producer. 
-![image](https://github.com/Tajoreh/WorkingWithRabbitMq/assets/20103416/e198ef67-494e-47ed-b729-092b4afbf348)
+![image](https://github.com/Tajoreh/WorkingWithRabbitMq/assets/20103416/239ba70a-66ab-4d00-8a51-bc36148e1131)
 
 Consumers listen to messages that are pushed on to queues. 
-![image](https://github.com/Tajoreh/WorkingWithRabbitMq/assets/20103416/812c431d-5664-4afe-a6ab-df2a5029519f)
+![image](https://github.com/Tajoreh/WorkingWithRabbitMq/assets/20103416/ee448115-f918-426b-8d70-6f06deb104f9)
 
 Again a consumer might not listen to any messages or might listen to messages from multiple queues. In this case we can see that our first consumer, consumes of 3 diffrent queues but the second, only consumes of one.
-![image](https://github.com/Tajoreh/WorkingWithRabbitMq/assets/20103416/a800100b-e1e3-4744-bbac-44758f74bb73)
+![image](https://github.com/Tajoreh/WorkingWithRabbitMq/assets/20103416/832f9518-e9ef-45d1-8158-4c4b5090d520)
 
 With diffrent types of exchanges and using bindings and queues, rabbitmq  gives us alot of flexibility in how we set up our message broker. We can duplicate messages by sending them from an exchange onto multiple queues or we can make sure only one queue ever gets a massage from an exchange.
 
