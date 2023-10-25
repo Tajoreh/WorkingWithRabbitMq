@@ -99,7 +99,7 @@ By using a connection with multiple channels, a producer for example, might be a
 
 Before we get start writing our code, we'll give a brief introduction on what we are trying to achive. All we are trying to achive is to publish a message into our rabbitmq broker from our producer and then consume that message from a consumer. So we will have a **Producer** and a **Consumer**. The consumer will consume the message from a queue. As we disscussed in previous part, the queue is like a post box for the consumer and will listen to messages from this queue. We have to give the queue a name and in this example we will call our queue *LetterBox* .
 
-In rabbitmq we can ***NEVER*** publish a message directly to a queue. It has to go through an exchange. In this very simple example the exchange is not that important, so that we can just use the *Default Exchange* which is represented by a blank string. So the producer will push a message onto the *Default Exchange* and then *Default Exchange* will push the that message into our LetterBox queue and finnally , as we have seen, the consumer will consume the message from  the LetterBox queue.
+In rabbitmq we can ***NEVER*** publish a message directly to a queue. It has to go through an exchange. In this very simple example the exchange is not that important, so we can just use the *Default Exchange* which is represented by a blank string. So the producer will push a message onto the *Default Exchange* and then *Default Exchange* will push that message into our LetterBox queue and finnally , as we have seen, the consumer will consume the message from  the LetterBox queue.
 
 ![image](https://github.com/Tajoreh/WorkingWithRabbitMq/assets/20103416/8d2eaa23-0a3a-439d-83eb-0467a71b2abe)
 
