@@ -1,8 +1,6 @@
 # WorkingWithRabbitMq
-WorkingWithRabbitMq
 
-*1. Installation*
------------------------------------------------------------------------------------------------------------------------
+## 1. Installation
 - Erlang download:
 
   [https://erlang.org/download/otp_versi...](https://erlang.org/download/otp_versions_tree.html)
@@ -46,9 +44,9 @@ WorkingWithRabbitMq
 - Docker run command:
 
   ``` docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9-management```
------------------------------------------------------------------------------------------------------------------------
-*2. Core Concepts*
------------------------------------------------------------------------------------------------------------------------
+
+## 2. Core Concepts
+
 When we talk about rabbitmq,these include:
 - Brokers
 - Exchanges
@@ -95,4 +93,15 @@ With diffrent types of exchanges and using bindings and queues, rabbitmq  gives 
 Two other terms that might be mentioned frequently in the context of rabbitmq are **Connections** and **Channels**. Every producer or consumer should open a TCP connection to our rabbitmq broker. A connection however can have multiple channels. 
 
 By using a connection with multiple channels, a producer for example, might be able to produce and push messages onto our message broker using diffrent threads. But because each thread uses a diffrent channel, these messages are isolated from one another. By using channels, and not opening multiple connections, we can save a lot of resources. The same is true for consumers who will only have one connection but might have multiple channels.
+
+
+## 3. First Program
+
+Before we get start writing our code, we'll give a brief introduction on what we are trying to achive. All we are trying to achive is to publish a message into our rabbitmq broker from our producer and then consume that message from a consumer. So we will have a **Producer** and a **Consumer**. The consumer will consume the message from a queue. As we disscussed in previous part, the queue is like a post box for the consumer and will listen to messages from this queue. We have to give the queue a name and in this example we will call our queue *LetterBox* .
+
+In rabbitmq we can ***NEVER*** publish a message directly to a queue. It has to go through an exchange. In this very simple example the exchange is not that important, so that we can just use the *Default Exchange* which is represented by a blank string. So the producer will push a message onto the *Default Exchange* and then *Default Exchange* will push the that message into our LetterBox queue and finnally , as we have seen, the consumer will consume the message from  the LetterBox queue.
+
+![image](https://github.com/Tajoreh/WorkingWithRabbitMq/assets/20103416/8d2eaa23-0a3a-439d-83eb-0467a71b2abe)
+
+
 
